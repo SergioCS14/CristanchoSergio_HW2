@@ -71,11 +71,42 @@ plt.savefig('2_FourierSignal.pdf')
 
 plt.figure(figsize=(14,7))
 plt.subplot(1,2,1)
-plt.specgram(signal[1], Fs=abs(signal[0,1]-signal[0,0]))
+plt.specgram(signal[1], Fs=1/abs(signal[0,1]-signal[0,0]))
 plt.title('Espectrograma de Signal')
 
 plt.subplot(1,2,2)
-plt.specgram(signalSuma[1], Fs=abs(signalSuma[0,1]-signalSuma[0,0]))
+plt.specgram(signalSuma[1], Fs=1/abs(signalSuma[0,1]-signalSuma[0,0]))
 plt.title('Espectrograma de SignalSuma')
 
 plt.savefig('2_Espectrogramas.pdf')
+
+from scipy.fftpack import fft,fftfreq
+
+#Temblor
+
+Temblort = np.genfromtxt('temblor.txt', skip_header=4)
+Temblor = np.transpose(Temblort)
+sr = 100 #Hz
+T = np.linspace(0, Temblor.size/sr, Temblor.size)
+
+plt.figure(figsize=(10,7))
+plt.plot(T, Temblor)
+plt.title('Temblor')
+plt.ylabel('A')
+plt.xlabel('t')
+plt.savefig('Temblor.pdf')
+
+FTemblor = fft(Temblor)
+fT = fftfreq(T.size, sr)
+
+plt.figure(figsize=(10,7))
+plt.plot(fT, FTemblor)
+plt.title('T.F. de Temblor')
+plt.ylabel('F(A)')
+plt.xlabel('f')
+plt.savefig('FourierTemblor.pdf')
+
+plt.figure(figsize=(10,7))
+plt.specgram(FTemblor, Fs=sr)
+plt.title('Espectrograma de Temblor')
+plt.savefig('EspectrogramaTemblor.pdf')
