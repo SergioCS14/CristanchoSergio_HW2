@@ -31,7 +31,7 @@ def FourierTransform(X):
         F[k] = sum( X[j]*np.exp((-2*np.pi*i)*k*j/N) for j in range(N))
     return F
 
-#Cambio de dominio a frecuencia. n es el tamaño de la señal y d es el sample rate, i.e. 1/(distancia promedio entre datos del dominio t)
+#Cambio de dominio a frecuencia. n es el tamaño de la señal y d es el sample rate, i.e. (distancia promedio entre datos del dominio t)
 
 def freq(n,d):
     f = np.zeros((n),dtype=complex)
@@ -68,3 +68,14 @@ plt.ylabel('$F(A)$')
 plt.title('T.F. de Signal Suma')
 
 plt.savefig('2_FourierSignal.pdf')
+
+plt.figure(figsize=(14,7))
+plt.subplot(1,2,1)
+plt.specgram(signal[1], Fs=abs(signal[0,1]-signal[0,0]))
+plt.title('Espectrograma de Signal')
+
+plt.subplot(1,2,2)
+plt.specgram(signalSuma[1], Fs=abs(signalSuma[0,1]-signalSuma[0,0]))
+plt.title('Espectrograma de SignalSuma')
+
+plt.savefig('2_Espectrogramas.pdf')
