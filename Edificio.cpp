@@ -7,7 +7,6 @@ int n = 10000;
 float dt = 0.01;
 float m = 1000;
 float k = 2000;
-float omega = sqrt(k/m);
 
 /* Variables */
 float *u_1 = NULL;
@@ -18,12 +17,12 @@ float *v_2 = NULL;
 float *v_3 = NULL;
 
 /*Funciones auxiliares*/
-float F( float T ){
-    return sin(omega*T);
+float F( float Omega, float T ){
+    return sin(Omega*T);
 }
 
-float a_1(int i){
-    return (-2*k*u_1[i]+k*u_2[i]+F(dt*i))/m;
+float a_1(int i, float Omega){
+    return (-2*k*u_1[i]+k*u_2[i]+F(Omega,dt*i))/m;
 }
 
 float a_2(int i){
@@ -35,6 +34,7 @@ float a_3(int i){
 }
 
 int main(){
+    float omega = sqrt(k/m);
     u_1  = new float[n];
     u_2  = new float[n];
     u_3  = new float[n];
@@ -59,13 +59,13 @@ int main(){
     outfile3<<0<<","<<u_3[0]<<std::endl;
     /* Iteración: Leap-Frog */
     for(int i=1; i<n; i++){
-        float v_1h = v_1[i-1]+a_1(i-1)*dt/2;
+        float v_1h = v_1[i-1]+a_1(i-1, omega)*dt/2;
         float v_2h = v_2[i-1]+a_2(i-1)*dt/2;
         float v_3h = v_3[i-1]+a_3(i-1)*dt/2;
         u_1[i] = u_1[i-1]+v_1h*dt;
         u_2[i] = u_2[i-1]+v_2h*dt;
         u_3[i] = u_3[i-1]+v_3h*dt;
-        v_1[i] = v_1h + a_1(i)*dt/2;
+        v_1[i] = v_1h + a_1(i, omega)*dt/2;
         v_2[i] = v_2h + a_2(i)*dt/2;
         v_3[i] = v_3h + a_3(i)*dt/2;
         outfile1<<i*dt<<","<<u_1[i]<<std::endl;
