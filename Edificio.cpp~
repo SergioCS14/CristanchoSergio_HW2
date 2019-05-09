@@ -109,13 +109,13 @@ int main(){
             v_1[i] = v_1h + a_1(i, omega)*dt/2;
             v_2[i] = v_2h + a_2(i)*dt/2;
             v_3[i] = v_3h + a_3(i)*dt/2;
-            if (abs(u_1[i]) > u_1max){
+            if (std::abs(u_1[i]) > u_1max){
                 u_1max = abs(u_1[i]);
             }
-            if (abs(u_2[i]) > u_2max){
+            if (std::abs(u_2[i]) > u_2max){
                 u_2max = abs(u_2[i]);
             }
-            if (abs(u_3[i]) > u_3max){
+            if (std::abs(u_3[i]) > u_3max){
                 u_3max = abs(u_3[i]);
             }
         }

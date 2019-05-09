@@ -31,7 +31,7 @@ def FourierTransform(X):
         F[k] = sum( X[j]*np.exp((-2*np.pi*i)*k*j/N) for j in range(N))
     return F
 
-#Cambio de dominio a frecuencia. n es el tamanio de la senial y d es el sample rate, i.e. (distancia promedio entre datos del dominio t)
+#Cambio de dominio a frecuencia. n es el tamaño de la senial y d es el sample rate, i.e. (distancia promedio entre datos del dominio t)
 
 def freq(n,d):
     f = np.zeros((n),dtype=complex)

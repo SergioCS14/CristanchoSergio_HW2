@@ -2,11 +2,11 @@ import numpy as np
 import matplotlib.pylab as plt
 
 MPiso1t = np.genfromtxt('3_MaximoP1.dat',delimiter=',')
-MPiso1 = np.transpose(MPiso1t)
+MPiso1 = np.transpose(Piso1t)
 MPiso2t = np.genfromtxt('3_MaximoP2.dat',delimiter=',')
-MPiso2 = np.transpose(MPiso2t)
+MPiso2 = np.transpose(Piso2t)
 MPiso3t = np.genfromtxt('3_MaximoP3.dat',delimiter=',')
-MPiso3 = np.transpose(MPiso3t)
+MPiso3 = np.transpose(Piso3t)
 
 plt.figure()
 plt.plot(MPiso1[0],MPiso1[1], label='Piso 1')
