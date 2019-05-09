@@ -17,6 +17,15 @@ float *v_2 = NULL;
 float *v_3 = NULL;
 
 /*Funciones auxiliares*/
+float my_abs( float x){
+	if(x<0){
+		return -x;
+	}
+	else{
+		return x;
+	}
+}
+
 float F( float Omega, float T ){
     return sin(Omega*T);
 }
@@ -109,19 +118,29 @@ int main(){
             v_1[i] = v_1h + a_1(i, omega)*dt/2;
             v_2[i] = v_2h + a_2(i)*dt/2;
             v_3[i] = v_3h + a_3(i)*dt/2;
-            if (abs(u_1[i]) > u_1max){
-                u_1max = abs(u_1[i]);
+	    /* Para máximos */
+            if (my_abs(u_1[i]) > u_1max){
+                u_1max = my_abs(u_1[i]);
             }
-            if (abs(u_2[i]) > u_2max){
-                u_2max = abs(u_2[i]);
+            if (my_abs(u_2[i]) > u_2max){
+                u_2max = my_abs(u_2[i]);
             }
-            if (abs(u_3[i]) > u_3max){
-                u_3max = abs(u_3[i]);
+            if (my_abs(u_3[i]) > u_3max){
+                u_3max = my_abs(u_3[i]);
             }
         }
         outfilem1<<omega<<","<<u_1max<<std::endl;
         outfilem2<<omega<<","<<u_2max<<std::endl;
         outfilem3<<omega<<","<<u_3max<<std::endl;
+	/* Ya encontre las frecuencias interesantes usando la gráfica de máximos. Lo siguiente permite graficar esos casos.*/
+	if ((omega == 0.639225)||(omega == 0.995606)||(omega==0.797616)){
+		std::ofstream outfileom1;
+		outfilem1.open("3_MaximoP1.dat");
+		std::ofstream outfileom2;
+		outfilem2.open("3_MaximoP2.dat");
+		std::ofstream outfileom3;
+		outfilem3.open("3_MaximoP3.dat");
+	}
     }
     outfilem1.close();
     outfilem2.close();
