@@ -24,18 +24,16 @@
 \end{center}
 
 \noindent
-\section{Ejercicio 2: Transformada de Fourier}
-\begin{figure}
+\section{Ejercicio 2: Fourier}
+\begin{center}
 \includegraphics[width=10cm]{2_Signal.pdf} 
-\capion{} 
-\begin{figure}
-\begin{figure}
+\begin{center}
+\begin{center}
 \includegraphics[width=10cm]{2_FourierSignal.pdf} 
-\caption{}
-\begin{figure}
-\begin{figure}
+\begin{center}
+\begin{center}
 \includegraphics[width=10cm]{2_Espectrogramas.pdf} 
-\begin{figure}
+\begin{center}
 
 %Analisis de resultados...
 

@@ -39,7 +39,7 @@ print('La amplitud maxima tiene maximos locales - en los tres pisos - en las fre
 omega_1 = MPiso1[0,np.argmax(MPiso1[1,MPiso1[0]<1])]
 print('omega_1=',omega_1, ', indice=', np.argmax(MPiso1[1,MPiso1[0]<1]))
 omega_2 = MPiso1[0,np.argmax(MPiso1[1,np.logical_and(MPiso1[0]>1,MPiso1[0]<2)])+MPiso1[1,MPiso1[0]<1].size]
-print('omega_2=',omega_2, ', indice=', np.argmax(MPiso1[1,np.logical_and(MPiso1[0]>1,MPiso1[0]<2)])+(MPiso1[0]<1).size)
+print('omega_2=',omega_2, ', indice=', np.argmax(MPiso1[1,np.logical_and(MPiso1[0]>1,MPiso1[0]<2)])+MPiso1[1,MPiso1[0]<1].size)
 omega_3 = MPiso1[0,np.argmax(MPiso1[1,MPiso1[0]>2])+MPiso1[1,MPiso1[0]<2].size]
 print('omega_3=',omega_3, ', indice=', np.argmax(MPiso1[1,MPiso1[0]>2])+MPiso1[1,MPiso1[0]<2].size)
 
