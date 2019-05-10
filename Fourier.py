@@ -98,6 +98,7 @@ plt.savefig('2_Temblor.pdf')
 
 FTemblor = fft(Temblor)
 fT = fftfreq(T.size, sr)
+print(FTemblor)
 
 plt.figure(figsize=(10,7))
 plt.plot(fT, FTemblor)
