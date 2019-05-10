@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <math.h>
+#include <string>
+#include <sstream>
 
 /* Constantes */
 int n = 10000;
@@ -94,6 +96,7 @@ int main(){
     outfilem2.open("3_MaximoP2.dat");
     std::ofstream outfilem3;
     outfilem3.open("3_MaximoP3.dat");
+    int index = 0;
     for(int j=0; j<100; j++){
         omega = (0.2+j*(3.0-0.2)/100)*sqrt(k/m);
         /* Máximos */
@@ -133,13 +136,22 @@ int main(){
         outfilem2<<omega<<","<<u_2max<<std::endl;
         outfilem3<<omega<<","<<u_3max<<std::endl;
 	/* Ya encontre las frecuencias interesantes usando la gráfica de máximos. Lo siguiente permite graficar esos casos.*/
-	if ((omega == 0.639225)||(omega == 0.995606)||(omega==0.797616)){
+	if ((j == 9)||(j == 37)||(j==57)){
+		index = index +1;
 		std::ofstream outfileom1;
-		outfilem1.open("3_MaximoP1.dat");
+		outfileom1.open("3_Piso1_omega"+std::to_string(index)+".dat");
 		std::ofstream outfileom2;
-		outfilem2.open("3_MaximoP2.dat");
+		outfileom2.open("3_Piso2_omega"+std::to_string(index)+".dat");
 		std::ofstream outfileom3;
-		outfilem3.open("3_MaximoP3.dat");
+		outfileom3.open("3_Piso3_omega"+std::to_string(index)+".dat");
+		for (int k=0; k<n; k++){
+			outfileom1<<k*dt<<","<<u_1[k]<<std::endl;
+			outfileom2<<k*dt<<","<<u_2[k]<<std::endl;
+			outfileom3<<k*dt<<","<<u_3[k]<<std::endl;
+		}
+		outfileom1.close();
+		outfileom2.close();
+		outfileom3.close();
 	}
     }
     outfilem1.close();

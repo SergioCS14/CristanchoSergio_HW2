@@ -35,9 +35,64 @@ plt.xlabel('$\omega$')
 plt.ylabel('$u_{max}$')
 plt.savefig('3_Maximos.pdf')
 
-SMPisos = MPiso1[1]+MPiso2[1]+MPiso3[1] 
 print('La amplitud maxima tiene maximos locales - en los tres pisos - en las frecuencias: ')
-print(MPiso1[0,np.argmax(SMPisos[MPiso1[0]<1])])
-print(MPiso1[0,np.argmax(SMPisos[np.logical_and(MPiso1[0]>1,MPiso1[0]<2)])])
-print(MPiso1[0,np.argmax(SMPisos[MPiso1[0]>2])])
+omega_1 = MPiso1[0,np.argmax(MPiso1[1,MPiso1[0]<1])]
+print('omega_1=',omega_1, ', indice=', np.argmax(MPiso1[1,MPiso1[0]<1]))
+omega_2 = MPiso1[0,np.argmax(MPiso1[1,np.logical_and(MPiso1[0]>1,MPiso1[0]<2)])+MPiso1[1,MPiso1[0]<1].size]
+print('omega_2=',omega_2, ', indice=', np.argmax(MPiso1[1,np.logical_and(MPiso1[0]>1,MPiso1[0]<2)])+MPiso1[1,MPiso1[0]<1].size)
+omega_3 = MPiso1[0,np.argmax(MPiso1[1,MPiso1[0]>2])+MPiso1[1,MPiso1[0]<2].size]
+print('omega_3=',omega_3, ', indice=', np.argmax(MPiso1[1,MPiso1[0]>2])+MPiso1[1,MPiso1[0]<2].size)
+
+Piso1_1t = np.genfromtxt('3_Piso1_omega1.dat',delimiter=',')
+Piso1_1 = np.transpose(Piso1_1t)
+Piso2_1t = np.genfromtxt('3_Piso2_omega1.dat',delimiter=',')
+Piso2_1 = np.transpose(Piso2_1t)
+Piso3_1t = np.genfromtxt('3_Piso3_omega1.dat',delimiter=',')
+Piso3_1 = np.transpose(Piso3_1t)
+
+plt.figure()
+plt.title("Trayectoria del edificio para $\omega_1$="+str(omega_1))
+plt.plot(Piso1_1[0],Piso1_1[1], label='Piso 1')
+plt.plot(Piso2_1[0],Piso2_1[1], label='Piso 2')
+plt.plot(Piso3_1[0],Piso3_1[1], label='Piso 3')
+plt.legend()
+plt.xlabel('$t$')
+plt.ylabel('$u(t)$')
+plt.savefig('3_Edificio_omega1.pdf')
+
+Piso1_2t = np.genfromtxt('3_Piso1_omega2.dat',delimiter=',')
+Piso1_2 = np.transpose(Piso1_2t)
+Piso2_2t = np.genfromtxt('3_Piso2_omega2.dat',delimiter=',')
+Piso2_2 = np.transpose(Piso2_2t)
+Piso3_2t = np.genfromtxt('3_Piso3_omega2.dat',delimiter=',')
+Piso3_2 = np.transpose(Piso3_2t)
+
+plt.figure()
+plt.title("Trayectoria del edificio para $\omega_2$="+str(omega_2))
+plt.plot(Piso1_2[0],Piso1_2[1], label='Piso 1')
+plt.plot(Piso2_2[0],Piso2_2[1], label='Piso 2')
+plt.plot(Piso3_2[0],Piso3_2[1], label='Piso 3')
+plt.legend()
+plt.xlabel('$t$')
+plt.ylabel('$u(t)$')
+plt.savefig('3_Edificio_omega2.pdf')
+
+Piso1_3t = np.genfromtxt('3_Piso1_omega3.dat',delimiter=',')
+Piso1_3 = np.transpose(Piso1_3t)
+Piso2_3t = np.genfromtxt('3_Piso2_omega3.dat',delimiter=',')
+Piso2_3 = np.transpose(Piso2_3t)
+Piso3_3t = np.genfromtxt('3_Piso3_omega3.dat',delimiter=',')
+Piso3_3 = np.transpose(Piso3_3t)
+
+plt.figure()
+plt.title("Trayectoria del edificio para $\omega_3$="+str(omega_3))
+plt.plot(Piso1_3[0],Piso1_3[1], label='Piso 1')
+plt.plot(Piso2_3[0],Piso2_3[1], label='Piso 2')
+plt.plot(Piso3_3[0],Piso3_3[1], label='Piso 3')
+plt.legend()
+plt.xlabel('$t$')
+plt.ylabel('$u(t)$')
+plt.savefig('3_Edificio_omega3.pdf')
+
+
 
