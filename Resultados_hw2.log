@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.12)  10 MAY 2019 14:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.12)  10 MAY 2019 15:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -710,7 +710,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 27.
 
-<2_Signal.pdf, id=8, 1011.78pt x 722.7pt>
+<2_Signal.pdf, id=12, 1011.78pt x 722.7pt>
 File: 2_Signal.pdf Graphic file (type pdf)
  <use 2_Signal.pdf>
 Package pdftex.def Info: 2_Signal.pdf used on input line 29.
@@ -722,7 +722,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 31.
 
-<2_FourierSignal.pdf, id=9, 1011.78pt x 722.7pt>
+<2_FourierSignal.pdf, id=13, 1011.78pt x 722.7pt>
 File: 2_FourierSignal.pdf Graphic file (type pdf)
  <use 2_FourierSignal.pdf>
 Package pdftex.def Info: 2_FourierSignal.pdf used on input line 33.
@@ -755,13 +755,13 @@ Package babel Info: Redefining spanish shorthand "?
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./2_Signal.pdf>]
-<2_Espectrogramas.pdf, id=48, 1011.78pt x 505.89pt>
+<2_Espectrogramas.pdf, id=52, 1011.78pt x 505.89pt>
 File: 2_Espectrogramas.pdf Graphic file (type pdf)
  <use 2_Espectrogramas.pdf>
 Package pdftex.def Info: 2_Espectrogramas.pdf used on input line 37.
 (pdftex.def)             Requested size: 398.33858pt x 199.17207pt.
 
-<2_Temblor.pdf, id=49, 722.7pt x 505.89pt>
+<2_Temblor.pdf, id=53, 722.7pt x 505.89pt>
 File: 2_Temblor.pdf Graphic file (type pdf)
  <use 2_Temblor.pdf>
 Package pdftex.def Info: 2_Temblor.pdf used on input line 41.
@@ -794,7 +794,7 @@ Package babel Info: Redefining spanish shorthand "?
 
 pdfTeX warning: pdflatex (file ./2_Espectrogramas.pdf): PDF inclusion: multiple
  pdfs with page group included in a single page
->] <2_FourierTemblor.pdf, id=132, 722.7pt x 505.89pt>
+>] <2_FourierTemblor.pdf, id=136, 722.7pt x 505.89pt>
 File: 2_FourierTemblor.pdf Graphic file (type pdf)
 
 <use 2_FourierTemblor.pdf>
@@ -828,69 +828,145 @@ Package babel Info: Redefining spanish shorthand "?
 
 pdfTeX warning: pdflatex (file ./2_FourierTemblor.pdf): PDF inclusion: multiple
  pdfs with page group included in a single page
->] <2_EspectrogramaTemblor.pdf, id=191, 722.7pt x 505.89pt>
+>] <2_EspectrogramaTemblor.pdf, id=195, 722.7pt x 505.89pt>
 File: 2_EspectrogramaTemblor.pdf Graphic file (type pdf)
 
 <use 2_EspectrogramaTemblor.pdf>
 Package pdftex.def Info: 2_EspectrogramaTemblor.pdf used on input line 49.
 (pdftex.def)             Requested size: 398.33858pt x 278.83473pt.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 53.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 53.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 53.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 53.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 53.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 53.
+
+<3_PrimerEdificio.pdf, id=196, 578.16pt x 433.62pt>
+File: 3_PrimerEdificio.pdf Graphic file (type pdf)
+ <use 3_PrimerEdificio.pdf>
+Package pdftex.def Info: 3_PrimerEdificio.pdf used on input line 55.
+(pdftex.def)             Requested size: 398.33858pt x 298.75482pt.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 56.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 56.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 56.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 56.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 56.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 54.
- [4 <./2_EspectrogramaTemblor.pdf>]
+(babel)             in language  on input line 56.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 56.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 56.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 56.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 56.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 56.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 56.
+
+[4 <./2_EspectrogramaTemblor.pdf>]
+<3_Maximos.pdf, id=239, 578.16pt x 433.62pt>
+File: 3_Maximos.pdf Graphic file (type pdf)
+ <use 3_Maximos.pdf>
+Package pdftex.def Info: 3_Maximos.pdf used on input line 59.
+(pdftex.def)             Requested size: 398.33858pt x 298.75482pt.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 60.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 60.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 60.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 60.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 60.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 60.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 60.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 60.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 60.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 60.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 60.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 60.
+ [5 <./3_PrimerEdificio.pdf>]
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 63.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 63.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 63.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 63.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 63.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 63.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 63.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 63.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 63.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 63.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 63.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 63.
+ [6 <./3_Maximos.pdf>]
 This exam contains 0 questions with 0 parts, 0 subparts, and 0 subsubparts.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 54.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 54.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 63.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 63.
 (./Resultados_hw2.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 54.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 54.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 63.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 63.
 Package rerunfilecheck Info: File `Resultados_hw2.out' has not changed.
-(rerunfilecheck)             Checksum: E3083170FB2AAFF6D0C6B1D9CCCD793E;71.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 54.
+(rerunfilecheck)             Checksum: 1CB113C808EDF07823A17EA336B929B1;166.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 63.
  ) 
 Here is how much of TeX's memory you used:
- 7366 strings out of 493029
- 104528 string characters out of 6136233
+ 7380 strings out of 493029
+ 104763 string characters out of 6136233
  211362 words of memory out of 5000000
- 10821 multiletter control sequences out of 15000+600000
+ 10830 multiletter control sequences out of 15000+600000
  7593 words of font info for 27 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,9n,32p,436b,414s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Resultados_hw2.pdf (4 pages, 1296395 bytes).
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb>
+Output written on Resultados_hw2.pdf (6 pages, 1360973 bytes).
 PDF statistics:
- 260 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
- 6 named destinations out of 1000 (max. 500000)
- 39 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 369 PDF objects out of 1000 (max. 8388607)
+ 138 compressed objects within 2 object streams
+ 9 named destinations out of 1000 (max. 500000)
+ 57 words of extra memory for PDF output out of 10000 (max. 10000000)
 

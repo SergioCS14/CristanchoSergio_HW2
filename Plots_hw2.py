@@ -31,7 +31,7 @@ plt.plot(MPiso1[0],MPiso1[1], label='Piso 1')
 plt.plot(MPiso2[0],MPiso2[1], label='Piso 2')
 plt.plot(MPiso3[0],MPiso3[1], label='Piso 3')
 plt.legend()
-plt.xlabel('$\omega$')
+plt.xlabel('$\omega$') 
 plt.ylabel('$u_{max}$')
 plt.savefig('3_Maximos.pdf')
 

@@ -136,7 +136,7 @@ int main(){
         outfilem2<<omega<<","<<u_2max<<std::endl;
         outfilem3<<omega<<","<<u_3max<<std::endl;
 	/* Ya encontre las frecuencias interesantes usando la gráfica de máximos. Lo siguiente permite graficar esos casos.*/
-	if ((j == 9)||(j == 37)||(omega==57)){
+	if ((j == 9)||(j == 37)||(j==57)){
 		index = index +1;
 		std::ofstream outfileom1;
 		outfileom1.open("3_Piso1_omega"+std::to_string(index)+".dat");

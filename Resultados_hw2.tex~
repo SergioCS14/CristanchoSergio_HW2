@@ -50,5 +50,14 @@
 \end{center}
 Espectrograma del temblor. Acá se puede ver, de nuevo, la concentración de frecuencias alrededor de \textbf{ PEDIENTE }.
 
+\section{Ejercicio 3: Ecuaciones diferenciales - edificio en un sismo}
+\begin{center}
+\includegraphics[width=14cm]{3_PrimerEdificio.pdf}
+\end{center}
+Gráfica de la trayectoria del centro de masa de cada piso $u_i(t)$ durante un sismo que ejerce una fuerza periódica $F(t)=\sin(\omega t)$ con $\omega=\sqrt{\frac{k}{m}}$ donde $k$ modela la rigidez de la estructura y $m$ la masa de cada piso. Para esta frecuencia en particular los pisos 1 y 3 oscilan con mayor amplitud que el segundo piso, que parece más estable.
+\begin{center}
+\includegraphics[width=14cm]{3_Maximos.pdf}
+\end{center}
+Gráfica de la amplitud máxima de la oscilación $u_{max}$ de cada piso en función de la frecuencia del sismo $\omega$ en el intervalo $\left[0.2\sqrt{\frac{k}{m}},3\sqrt{\frac{k}{m}} \right]$. Se pueden ver claramente tres picos, las cuales corresponderán a un tipo particular de resonancia del edificio. 
 
 \end{document}
