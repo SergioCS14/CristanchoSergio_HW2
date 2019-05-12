@@ -86,5 +86,7 @@ Aproximación con velocidad anterior, es decir se utiliza $v(i-1)$ en lugar de $
 \begin{center}
 \includegraphics[width=14cm]{3_Edificio_bono2.pdf}
 \end{center}
-Aproximación lineal, es decir $v(i)=v(i-1)+$
+Aproximación lineal, es decir $v(i)=v(i-1)+a(i-1)*dt$. De nuevo, el cambio es mínimo entre esta aproximación y las anteriores.
+
+\textbf{Conclusión:} Hacer Leap-Frog con una aproximación a la velocidad sí provee resultados consistentes. Además, cambiar de aproximación, al menos en este caso, no generó ningún tipo de cambio apreciable. Tal vez para fuerzas que dependan de forma más fuerte de la velocidad sí cambien.
 \end{document}
