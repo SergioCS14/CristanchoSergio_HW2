@@ -94,5 +94,22 @@ plt.xlabel('$t$')
 plt.ylabel('$u(t)$')
 plt.savefig('3_Edificio_omega3.pdf')
 
+Piso1bt = np.genfromtxt('3_Piso1_bono.dat',delimiter=',')
+Piso1b = np.transpose(Piso1bt)
+Piso2bt = np.genfromtxt('3_Piso2_bono.dat',delimiter=',')
+Piso2b = np.transpose(Piso2bt)
+Piso3bt = np.genfromtxt('3_Piso3_bono.dat',delimiter=',')
+Piso3b = np.transpose(Piso3bt)
+
+plt.figure()
+plt.title("Trayectoria del edificio con fricción $\gamma =100$")
+plt.plot(Piso1b[0],Piso1b[1], label='Piso 1')
+plt.plot(Piso2b[0],Piso2b[1], label='Piso 2')
+plt.plot(Piso3b[0],Piso3b[1], label='Piso 3')
+plt.legend()
+plt.xlabel('$t$')
+plt.ylabel('$u(t)$')
+plt.savefig('3_Edificio_bono.pdf')
+
 
 

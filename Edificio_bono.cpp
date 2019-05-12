@@ -9,7 +9,7 @@ int n = 10000;
 float dt = 0.01;
 float m = 1000;
 float k = 2000;
-float gamma = 0;
+float gama = 100;
 
 /* Variables */
 float *u_1 = NULL;
@@ -20,29 +20,21 @@ float *v_2 = NULL;
 float *v_3 = NULL;
 
 /*Funciones auxiliares*/
-float my_abs( float x){
-	if(x<0){
-		return -x;
-	}
-	else{
-		return x;
-	}
-}
 
 float F( float Omega, float T ){
     return sin(Omega*T);
 }
 
 float a_1(int i, float Omega){
-    return (-gamma*(u_1[i]-u_1[i])/dt-2*k*u_1[i]+k*u_2[i]+F(Omega,dt*i))/m;
+    return (-gama*(u_1[i]-u_1[i-1])/dt-2*k*u_1[i]+k*u_2[i]+F(Omega,dt*i))/m;
 }
 
 float a_2(int i){
-    return (k*u_1[i]-2*k*u_2[i]+k*u_3[i])/m;
+    return (-gama*(u_1[i]-u_1[i-1])/dt+k*u_1[i]-2*k*u_2[i]+k*u_3[i])/m;
 }
 
 float a_3(int i){
-    return (k*u_2[i]-k*u_3[i])/m;
+    return (-gama*(u_1[i]-u_1[i-1])/dt+k*u_2[i]-k*u_3[i])/m;
 }
 
 int main(){
@@ -54,11 +46,11 @@ int main(){
     v_2  = new float[n];
     v_3  = new float[n];
     std::ofstream outfile1;
-    outfile1.open("3_Piso1.dat");
+    outfile1.open("3_Piso1_bono.dat");
     std::ofstream outfile2;
-    outfile2.open("3_Piso2.dat");
+    outfile2.open("3_Piso2_bono.dat");
     std::ofstream outfile3;
-    outfile3.open("3_Piso3.dat");
+    outfile3.open("3_Piso3_bono.dat");
     /* Condiciones iniciales */
     u_1[0] = 0;
     u_2[0] = 0;
