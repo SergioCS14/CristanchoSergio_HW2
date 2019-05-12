@@ -10,6 +10,7 @@ float dt = 0.01;
 float m = 1000;
 float k = 2000;
 float gama = 10;
+float omega = sqrt(k/m);
 
 /* Variables */
 float *u_1 = NULL;
@@ -38,19 +39,60 @@ float a_3(int i){
 }
 
 float a_11(int i, float Omega){
-    return (-gama*v_1[i-1]-2*k*u_1[i]+k*u_2[i]+F(Omega,dt*i))/m;
+    if(i>0){
+        return (-gama*(v_1[i-1])-2*k*u_1[i]+k*u_2[i]+F(Omega,dt*i))/m;
+    }
+    else{
+        return (-2*k*u_1[i]+k*u_2[i]+F(Omega,dt*i))/m;
+    }
 }
 
 float a_12(int i){
-    return (-gama*v_2[i-1]+k*u_1[i]-2*k*u_2[i]+k*u_3[i])/m;
+    if(i>0){
+        return (-gama*(v_2[i-1])+k*u_1[i]-2*k*u_2[i]+k*u_3[i])/m;
+    }
+    else {
+        (k*u_1[i]-2*k*u_2[i]+k*u_3[i])/m;
+    }
 }
 
 float a_13(int i){
-    return (-gama*v_3[i-1]+k*u_2[i]-k*u_3[i])/m;
+    if (i>0){
+        return (-gama*(v_3[i-1])+k*u_2[i]-k*u_3[i])/m;
+    }
+    else {
+        return (k*u_2[i]-k*u_3[i])/m;
+    }
+}
+
+float a_21(int i, float Omega){
+    if(i>0){
+        return (-gama*(v_1[i-1]+a_21(i-1,omega))-2*k*u_1[i]+k*u_2[i]+F(Omega,dt*i))/m;
+    }
+    else{
+        return (-2*k*u_1[i]+k*u_2[i]+F(Omega,dt*i))/m;
+    }
+}
+
+float a_22(int i){
+    if(i>0){
+        return (-gama*(v_2[i-1]+a_22(i-1))+k*u_1[i]-2*k*u_2[i]+k*u_3[i])/m;
+    }
+    else {
+        (k*u_1[i]-2*k*u_2[i]+k*u_3[i])/m;
+    }
+}
+
+float a_23(int i){
+    if (i>0){
+        return (-gama*(v_3[i-1]+a_23(i-1))+k*u_2[i]-k*u_3[i])/m;
+    }
+    else {
+        return (k*u_2[i]-k*u_3[i])/m;
+    }
 }
 
 int main(){
-    float omega = sqrt(k/m);
     u_1  = new float[n];
     u_2  = new float[n];
     u_3  = new float[n];
@@ -73,7 +115,7 @@ int main(){
     outfile1<<0<<","<<u_1[0]<<std::endl;
     outfile2<<0<<","<<u_2[0]<<std::endl;
     outfile3<<0<<","<<u_3[0]<<std::endl;
-    /* Iteración: Leap-Frog con aproximación espacial sobre velocidad*/
+    /* Iteración: Leap-Frog con aproximación bd sobre velocidad*/
     for(int i=1; i<n; i++){
         float v_1h = v_1[i-1]+a_1(i-1, omega)*dt/2;
         float v_2h = v_2[i-1]+a_2(i-1)*dt/2;
@@ -105,10 +147,10 @@ int main(){
     v_1[0] = 0;
     v_2[0] = 0;
     v_3[0] = 0;
-    outfile1<<0<<","<<u_1[0]<<std::endl;
-    outfile2<<0<<","<<u_2[0]<<std::endl;
-    outfile3<<0<<","<<u_3[0]<<std::endl;
-    /* Iteración: Leap-Frog con aproximación temporal sobre velocidad*/
+    outfile11<<0<<","<<u_1[0]<<std::endl;
+    outfile12<<0<<","<<u_2[0]<<std::endl;
+    outfile13<<0<<","<<u_3[0]<<std::endl;
+    /* Iteración: Leap-Frog con aproximación anterior sobre velocidad*/
     for(int i=1; i<n; i++){
         float v_1h = v_1[i-1]+a_11(i-1, omega)*dt/2;
         float v_2h = v_2[i-1]+a_12(i-1)*dt/2;
@@ -126,6 +168,41 @@ int main(){
     outfile11.close();
     outfile12.close();
     outfile13.close();
-
+    
+    /* Tercera aproximación*/
+    std::ofstream outfile21;
+    outfile21.open("3_Piso1_bono2.dat");
+    std::ofstream outfile22;
+    outfile22.open("3_Piso2_bono2.dat");
+    std::ofstream outfile23;
+    outfile23.open("3_Piso3_bono2.dat");
+    /* Condiciones iniciales */
+    u_1[0] = 0;
+    u_2[0] = 0;
+    u_3[0] = 0;
+    v_1[0] = 0;
+    v_2[0] = 0;
+    v_3[0] = 0;
+    outfile21<<0<<","<<u_1[0]<<std::endl;
+    outfile22<<0<<","<<u_2[0]<<std::endl;
+    outfile23<<0<<","<<u_3[0]<<std::endl;
+    /* Iteración: Leap-Frog con aproximación lineal sobre velocidad*/
+    for(int i=1; i<n; i++){
+        float v_1h = v_1[i-1]+a_21(i-1, omega)*dt/2;
+        float v_2h = v_2[i-1]+a_22(i-1)*dt/2;
+        float v_3h = v_3[i-1]+a_23(i-1)*dt/2;
+        u_1[i] = u_1[i-1]+v_1h*dt;
+        u_2[i] = u_2[i-1]+v_2h*dt;
+        u_3[i] = u_3[i-1]+v_3h*dt;
+        v_1[i] = v_1h + a_1(i, omega)*dt/2;
+        v_2[i] = v_2h + a_2(i)*dt/2;
+        v_3[i] = v_3h + a_3(i)*dt/2;
+        outfile21<<i*dt<<","<<u_1[i]<<std::endl;
+        outfile22<<i*dt<<","<<u_2[i]<<std::endl;
+        outfile23<<i*dt<<","<<u_3[i]<<std::endl;
+    }
+    outfile21.close();
+    outfile22.close();
+    outfile23.close();
     return 0;
 }
