@@ -9,7 +9,7 @@ int n = 10000;
 float dt = 0.01;
 float m = 1000;
 float k = 2000;
-float gama = 100;
+float gama = 10;
 
 /* Variables */
 float *u_1 = NULL;
