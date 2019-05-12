@@ -102,7 +102,7 @@ Piso3bt = np.genfromtxt('3_Piso3_bono.dat',delimiter=',')
 Piso3b = np.transpose(Piso3bt)
 
 plt.figure()
-plt.title("Trayectoria del edificio con fricción $\gamma =100$")
+plt.title("Trayectoria del edificio con fricción $\gamma =100$, aproximacion backwards difference")
 plt.plot(Piso1b[0],Piso1b[1], label='Piso 1')
 plt.plot(Piso2b[0],Piso2b[1], label='Piso 2')
 plt.plot(Piso3b[0],Piso3b[1], label='Piso 3')
@@ -110,6 +110,23 @@ plt.legend()
 plt.xlabel('$t$')
 plt.ylabel('$u(t)$')
 plt.savefig('3_Edificio_bono.pdf')
+
+Piso1b1t = np.genfromtxt('3_Piso1_bono1.dat',delimiter=',')
+Piso1b1 = np.transpose(Piso1b1t)
+Piso2b1t = np.genfromtxt('3_Piso2_bono1.dat',delimiter=',')
+Piso2b1 = np.transpose(Piso2b1t)
+Piso3b1t = np.genfromtxt('3_Piso3_bono1.dat',delimiter=',')
+Piso3b1 = np.transpose(Piso3b1t)
+
+plt.figure()
+plt.title("Trayectoria del edificio con fricción $\gamma =100$, aproximación velocidad anterior")
+plt.plot(Piso1b1[0],Piso1b1[1], label='Piso 1')
+plt.plot(Piso2b1[0],Piso2b1[1], label='Piso 2')
+plt.plot(Piso3b1[0],Piso3b1[1], label='Piso 3')
+plt.legend()
+plt.xlabel('$t$')
+plt.ylabel('$u(t)$')
+plt.savefig('3_Edificio_bono1.pdf')
 
 
 
