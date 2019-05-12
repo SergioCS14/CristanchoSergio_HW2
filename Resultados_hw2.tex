@@ -73,10 +73,18 @@ El tercer piso de resonancia hace que el primer piso tenga la mayor amplitud de 
 El tercer tipo de resonancia hace que el segundo piso tenga la mayor amplitud. Los otros dos pisos se mueven en la dirección contraria al segundo. Al igual que el caso anterior, esta situación es peligrosa, pues la estructura se deforma alrededor del segundo piso.
 
 \section{Bono Ejercicio 3: Soluciones a Leap-Frog con velocidad}
-Como bono quería ver qué ocurría con las trayectorias del edificio con $\omega = \sqrt{\frac{k}{m}}$ al introducir el coeficiente de fricción $\gamma(=10)$ (y por tanto dependencia de velocidad). Como el esquema usual de Leap-Frog no permite dependencia de la velocidad en la aceleración, este ejercicio es interesante para ver qué diferencias obtenemos.
+Como bono quería ver qué ocurría con las trayectorias del edificio con $\omega = \sqrt{\frac{k}{m}}$ al introducir el coeficiente de fricción $\gamma(=100)$ (y por tanto dependencia de velocidad). Como el esquema usual de Leap-Frog no permite dependencia de la velocidad en la aceleración, este ejercicio es interesante para ver qué diferencias obtenemos.
 
 \begin{center}
 \includegraphics[width=14cm]{3_Edificio_bono.pdf}
 \end{center}
-Aproximación con backwards difference, es decir $v(i)=\frac{v(i)-v(i-1)}{dt}$. Lo primero que notamos es que da un resultado con sentido que es claramente distinto al caso sin fricción.
+Aproximación con backwards difference, es decir $v(i)=\frac{v(i)-v(i-1)}{dt}$. Lo primero que notamos es que da un resultado con sentido que es claramente distinto al caso sin fricción. Vemos que la amplitud de las oscilaciones ha disminuido, lo cual era de esperarse al introducir fricción al sistema.
+\begin{center}
+\includegraphics[width=14cm]{3_Edificio_bono1.pdf}
+\end{center}
+Aproximación con velocidad anterior, es decir se utiliza $v(i-1)$ en lugar de $v(i)$. Acá vemos que no ha habido ningún cambio apreciable entre esta aproximación y la anterior. 
+\begin{center}
+\includegraphics[width=14cm]{3_Edificio_bono2.pdf}
+\end{center}
+Aproximación lineal, es decir $v(i)=v(i-1)+$
 \end{document}

@@ -67,7 +67,7 @@ float a_13(int i){
 
 float a_21(int i, float Omega){
     if(i>0){
-        return (-gama*(v_1[i-1]+a_21(i-1,omega))-2*k*u_1[i]+k*u_2[i]+F(Omega,dt*i))/m;
+        return (-gama*(v_1[i-1]+dt*a_21(i-1,omega))-2*k*u_1[i]+k*u_2[i]+F(Omega,dt*i))/m;
     }
     else{
         return (-2*k*u_1[i]+k*u_2[i]+F(Omega,dt*i))/m;
@@ -76,7 +76,7 @@ float a_21(int i, float Omega){
 
 float a_22(int i){
     if(i>0){
-        return (-gama*(v_2[i-1]+a_22(i-1))+k*u_1[i]-2*k*u_2[i]+k*u_3[i])/m;
+        return (-gama*(v_2[i-1]+dt*a_22(i-1))+k*u_1[i]-2*k*u_2[i]+k*u_3[i])/m;
     }
     else {
         (k*u_1[i]-2*k*u_2[i]+k*u_3[i])/m;
@@ -85,7 +85,7 @@ float a_22(int i){
 
 float a_23(int i){
     if (i>0){
-        return (-gama*(v_3[i-1]+a_23(i-1))+k*u_2[i]-k*u_3[i])/m;
+        return (-gama*(v_3[i-1]+dt*a_23(i-1))+k*u_2[i]-k*u_3[i])/m;
     }
     else {
         return (k*u_2[i]-k*u_3[i])/m;
